@@ -1,0 +1,33 @@
+{
+  "name": "@win31ui/tokens",
+  "version": "0.1.0",
+  "description": "Windows 3.1 design tokens, pixel fonts, bitmap assets and the base stylesheet. Source package bundled into @win31ui/react (not published separately).",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "win31",
+    "windows-3.1",
+    "windows95",
+    "design-tokens",
+    "css",
+    "retro-ui",
+    "pixel-ui"
+  ],
+  "files": [
+    "win31.css",
+    "assets",
+    "README.md"
+  ],
+  "exports": {
+    "./win31.css": "./win31.css",
+    "./assets/*": "./assets/*"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "echo \"@win31ui/tokens is static; nothing to build\"",
+    "typecheck": "echo \"@win31ui/tokens has no TypeScript\""
+  },
+  "private": true
+}

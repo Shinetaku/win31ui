@@ -1,0 +1,206 @@
+/* Desktop replica layout — demo-specific, uses tokens variables only. */
+
+.demo-desktop {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Keep the PM desktop area inside the window body (below title + menu). */
+.demo-pm > .win31-window-body {
+  position: relative;
+}
+
+.demo-pm-desktop {
+  position: absolute;
+  /* below the menu bar (31px bar + 1px border + 1px body border) */
+  inset: 33px 0 0 0;
+  background: var(--win31-desktop);
+  overflow: hidden;
+}
+
+/* Program group icon grid. */
+.demo-group-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(96px, 1fr));
+  gap: 8px;
+  padding: 14px;
+  min-height: 150px;
+}
+
+.demo-group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 2px;
+  border: none;
+  background: transparent;
+  color: var(--win31-text);
+  font-family: var(--win31-font-ui);
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  user-select: none;
+}
+
+.demo-group-item:focus-visible {
+  outline: 1px dotted var(--win31-border);
+}
+
+.demo-group-item span {
+  padding: 1px 3px;
+  background: transparent;
+  white-space: normal;
+}
+
+.demo-docked-group {
+  border: 1px solid var(--win31-border);
+  background: var(--win31-frame);
+  box-shadow: var(--win31-bevel-raised);
+  padding: 6px 8px;
+}
+
+/* Pixel SVG icons ship with width/height=32 attributes; clamp them to the
+   wrapper so 16px rows (e.g. file listings) are not overdrawn. */
+.win31-app-icon {
+  overflow: hidden;
+}
+
+.win31-app-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Paintbrush tool column: keep tools and the width slider inside the column. */
+.demo-paint-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 120px;
+  flex: 0 0 120px;
+}
+
+.demo-paint-tools .win31-slider {
+  width: 100%;
+}
+
+/* Desktop icons: vertical column on the left. */
+.demo-desktop .win31-desktop-icon {
+  position: fixed;
+  left: 10px;
+}
+
+/* App windows are placed with inline fixed positioning. */
+.demo-window {
+  position: fixed;
+}
+
+/* Apps inside a fixed-height window fill the body below the title bar. */
+.demo-window .win31-window-body {
+  height: calc(100% - 39px);
+}
+
+/* Write pad: text area fills the window body. */
+.demo-write-editor {
+  width: 100%;
+  min-height: 220px;
+  resize: none;
+}
+
+/* Write pad: ruler above the page. */
+.demo-ruler {
+  height: 20px;
+  margin: 0 6px;
+  display: flex;
+  align-items: flex-end;
+  gap: 54px;
+  padding: 0 40px;
+  background:
+    repeating-linear-gradient(90deg, var(--win31-border) 0 1px, transparent 1px 12px) left bottom / calc(100% - 4px) 8px no-repeat,
+    var(--win31-button-face);
+  border-bottom: 1px solid var(--win31-border);
+  font-family: var(--win31-font-ui);
+  font-size: 11px;
+  color: var(--win31-text);
+}
+
+.demo-ruler span {
+  position: relative;
+  bottom: 8px;
+}
+
+/* Write pad: grey workspace with a white page. */
+.demo-write-workspace {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--win31-button-dark);
+  padding: 10px 16px;
+}
+
+.demo-write-page {
+  min-height: 100%;
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border);
+  box-shadow: 2px 2px 0 var(--win31-border);
+  display: flex;
+}
+
+/* File Manager panes fill the window body. */
+.demo-file-manager {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 6px;
+  padding: 6px;
+  background: var(--win31-frame);
+  min-height: 300px;
+}
+
+.demo-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-sunken);
+}
+
+.demo-pane-title {
+  padding: 2px 6px;
+  background: var(--win31-frame);
+  border-bottom: 1px solid var(--win31-border);
+  font-family: var(--win31-font-ui);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.demo-copy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.demo-open-layout {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.demo-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.demo-clock {
+  margin-left: auto;
+  font-family: var(--win31-font-ui);
+  font-size: 14px;
+}

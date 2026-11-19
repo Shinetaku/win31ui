@@ -1,0 +1,72 @@
+{
+  "name": "@win31ui/react",
+  "version": "0.1.0",
+  "description": "Windows 3.1 React components with bundled design tokens, pixel fonts and bitmaps. SSR-safe, ready for Next.js, Vite, Electron and Tauri.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "win31",
+    "windows-3.1",
+    "react",
+    "react-components",
+    "ssr",
+    "nextjs",
+    "electron",
+    "tauri",
+    "retro-ui",
+    "pixel-ui"
+  ],
+  "files": [
+    "dist",
+    "styles.css",
+    "README.md"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./win31.css": "./dist/win31.css",
+    "./assets/*": "./dist/assets/*",
+    "./styles.css": "./styles.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^9.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "jsdom": "^25.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8",
+    "@win31ui/tokens": "^0.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

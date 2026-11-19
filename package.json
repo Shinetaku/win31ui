@@ -1,0 +1,31 @@
+{
+  "name": "win31ui",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Windows 3.1 styled React component library for web, SSR, Electron and Tauri.",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @win31ui/tokens -w @win31ui/react",
+    "dev": "npm run dev -w @win31ui/react",
+    "dev:vite": "npm run dev -w @win31ui/example-vite",
+    "dev:next": "npm run dev -w @win31ui/example-next",
+    "dev:desktop": "npm run dev -w @win31ui/example-desktop",
+    "typecheck": "npm run typecheck -w @win31ui/tokens -w @win31ui/react -w @win31ui/example-vite -w @win31ui/example-next",
+    "test": "npm test -w @win31ui/react",
+    "test:watch": "npm run test:watch -w @win31ui/react",
+    "test:e2e:vite": "npx playwright test -c e2e/playwright.vite.config.ts",
+    "test:e2e:next": "npx playwright test -c e2e/playwright.next.config.ts",
+    "test:e2e:desktop": "npx playwright test -c e2e/playwright.desktop.config.ts",
+    "test:all": "npm run test && npm run test:e2e:vite && npm run test:e2e:next && npm run test:e2e:desktop"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

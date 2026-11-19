@@ -1,0 +1,13 @@
+node_modules
+dist
+.next
+out
+.turbo
+*.tsbuildinfo
+test-results
+playwright-report
+.DS_Store
+*.log
+.npmrc
+*.tgz
+__pycache__

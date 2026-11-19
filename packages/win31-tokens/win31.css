@@ -1,0 +1,535 @@
+/* ==========================================================================
+   Win31 Web Theme — extracted from https://theletterf.github.io/hugo-win31/
+   Windows 3.1 design tokens & components. Reusable across projects.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("assets/fonts/ms_sans_serif.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("assets/fonts/ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  --win31-desktop: #c0c0c0;
+  --win31-frame: #c0c0c0;
+  --win31-window-bg: #ffffff;
+  --win31-text: #000000;
+  --win31-titlebar-active: #000080;
+  --win31-titlebar-active-bg: #000080;
+  --win31-titlebar-inactive-bg: #ffffff;
+  --win31-titlebar-inactive-text: #000000;
+  --win31-titlebar-text: #ffffff;
+  --win31-button-face: #c0c0c0;
+  --win31-button-light: #ffffff;
+  --win31-button-dark: #808080;
+  --win31-border: #000000;
+  --win31-selection-bg: #000080;
+  --win31-selection-text: #ffffff;
+  --win31-link: #00a866;
+  --win31-link-visited: #00a866;
+  --win31-blockquote-shadow: #b6bcc1;
+  --win31-blockquote-bg: #fff9cc;
+  --win31-font-ui: "Pixelated MS Sans Serif", "MS Sans Serif", "SimSun", "Microsoft YaHei", Tahoma, Arial, sans-serif;
+  --win31-font-content: "Pixelated MS Sans Serif", "MS Sans Serif", "SimSun", "Microsoft YaHei", Tahoma, Arial, sans-serif;
+  --win31-font-mono: "Fixedsys", "Courier New", monospace;
+  --win31-titlebar-height: 31px;
+  --win31-menubar-height: 31px;
+  --win31-control-height: 30px;
+  --win31-input-height: 27px;
+  --win31-bevel-raised:
+    inset -1px -1px 0 var(--win31-border),
+    inset 1px 1px 0 var(--win31-button-light),
+    inset -2px -2px 0 var(--win31-button-dark),
+    inset 2px 2px 0 var(--win31-button-face);
+  --win31-bevel-pressed:
+    inset 1px 1px 0 var(--win31-border),
+    inset -1px -1px 0 var(--win31-button-light),
+    inset 2px 2px 0 var(--win31-button-dark);
+  --win31-bevel-sunken:
+    inset 1px 1px 0 var(--win31-button-dark),
+    inset -1px -1px 0 var(--win31-button-light);
+}
+
+html[data-win31-theme="dark"] {
+  --win31-desktop: #000000;
+  --win31-frame: #9a9a9a;
+  --win31-window-bg: #bfbfbf;
+  --win31-titlebar-active: #4d2bb8;
+  --win31-titlebar-active-bg: repeating-linear-gradient(45deg, #6e49db 0 2px, #4d2bb8 2px 4px);
+  --win31-titlebar-inactive-bg: #9a9a9a;
+  --win31-titlebar-inactive-text: #000000;
+  --win31-titlebar-text: #ffffff;
+  --win31-button-face: #c0c0c0;
+  --win31-button-light: #ffffff;
+  --win31-button-dark: #5a5a5a;
+  --win31-selection-bg: #000000;
+  --win31-selection-text: #ffffff;
+  --win31-link: #003c96;
+  --win31-link-visited: #2d2f8f;
+}
+html[data-win31-theme="fun"] {
+  --win31-desktop: #fff200;
+  --win31-frame: #ff1a00;
+  --win31-window-bg: #fff200;
+  --win31-titlebar-active: #000000;
+  --win31-titlebar-active-bg: #000000;
+  --win31-titlebar-inactive-bg: #ff1a00;
+  --win31-titlebar-inactive-text: #ffffff;
+  --win31-titlebar-text: #ffffff;
+  --win31-button-face: #c0c0c0;
+  --win31-button-light: #ffffff;
+  --win31-button-dark: #808080;
+  --win31-selection-bg: #000000;
+  --win31-selection-text: #ffffff;
+  --win31-link: #b00000;
+  --win31-link-visited: #7f0000;
+}
+html[data-win31-theme="mahogany"] {
+  --win31-desktop: #800000;
+  --win31-frame: #c0c0c0;
+  --win31-window-bg: #ffffff;
+  --win31-titlebar-active: #800040;
+  --win31-titlebar-active-bg: #800040;
+  --win31-titlebar-inactive-bg: #808080;
+  --win31-titlebar-inactive-text: #000000;
+  --win31-titlebar-text: #ffffff;
+  --win31-button-face: #c0c0c0;
+  --win31-button-light: #ffffff;
+  --win31-button-dark: #808080;
+  --win31-selection-bg: #800040;
+  --win31-selection-text: #ffffff;
+  --win31-link: #800040;
+  --win31-link-visited: #600030;
+}
+html[data-win31-theme="emerald"] {
+  --win31-desktop: #008080;
+  --win31-frame: #c0c0c0;
+  --win31-window-bg: #ffffff;
+  --win31-titlebar-active: #007040;
+  --win31-titlebar-active-bg: #007040;
+  --win31-titlebar-inactive-bg: #808080;
+  --win31-titlebar-inactive-text: #000000;
+  --win31-titlebar-text: #ffffff;
+  --win31-button-face: #c0c0c0;
+  --win31-button-light: #ffffff;
+  --win31-button-dark: #808080;
+  --win31-selection-bg: #007040;
+  --win31-selection-text: #ffffff;
+  --win31-link: #007040;
+  --win31-link-visited: #005030;
+}
+html[data-win31-theme="cinnamon"] {
+  --win31-desktop: #c08080;
+  --win31-frame: #c08080;
+  --win31-window-bg: #ffffff;
+  --win31-titlebar-active: #800040;
+  --win31-titlebar-active-bg: #800040;
+  --win31-titlebar-inactive-bg: #c08080;
+  --win31-titlebar-inactive-text: #000000;
+  --win31-titlebar-text: #ffffff;
+  --win31-button-face: #c0c0c0;
+  --win31-button-light: #ffffff;
+  --win31-button-dark: #808080;
+  --win31-selection-bg: #800040;
+  --win31-selection-text: #ffffff;
+  --win31-link: #800040;
+  --win31-link-visited: #600030;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html {
+  color: var(--win31-text);
+  font-family: var(--win31-font-content);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+}
+body {
+  min-height: 100vh;
+  padding: 8px;
+  background-color: var(--win31-desktop);
+  background-image: url("assets/img/chitz.png");
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: auto;
+}
+::selection { background: var(--win31-selection-bg); color: var(--win31-selection-text); }
+a { color: var(--win31-link); text-decoration: underline; font-family: var(--win31-font-ui); }
+a:visited { color: var(--win31-link-visited); }
+img { border: 2px solid var(--win31-border); image-rendering: pixelated; }
+
+/* ---------- Window frame ---------- */
+.win31-window {
+  position: relative;
+  background: var(--win31-frame);
+  border: 1px solid var(--win31-border);
+  padding: 3px;
+  margin: 0 0 4px;
+  color: var(--win31-text);
+}
+.win31-window.is-dialog { position: fixed; z-index: 500; }
+.win31-window.is-maximized { position: fixed; inset: 8px; width: auto !important; height: auto !important; margin: 0; z-index: 400; display: flex; flex-direction: column; }
+.win31-window.is-maximized > .win31-window-body { flex: 1; overflow: auto; }
+
+/* ---------- Title bar ---------- */
+.win31-titlebar {
+  display: flex; align-items: stretch;
+  height: var(--win31-titlebar-height);
+  background: var(--win31-titlebar-active-bg);
+  border: 1px solid var(--win31-border);
+  color: var(--win31-titlebar-text);
+  font-family: var(--win31-font-ui);
+  font-size: 18px; font-weight: 400; line-height: 1;
+  user-select: none; cursor: default;
+  -webkit-font-smoothing: auto;
+}
+.win31-sysmenu {
+  flex: 0 0 28px; width: 28px; align-self: stretch;
+  background: url("assets/img/sysmenu-v2.png") center center no-repeat;
+  background-size: 100% 100%; image-rendering: pixelated;
+  border: none; padding: 0; cursor: default;
+}
+.win31-titlebar-text {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 0 4px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  font-weight: 400;
+}
+.win31-titlebar-buttons { flex: 0 0 auto; display: flex; align-items: stretch; }
+.win31-btn-control {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: 28px; padding: 0; cursor: default;
+  background: var(--win31-button-face);
+  border: none; border-left: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-raised);
+  font-size: 0;
+}
+.win31-btn-control:active { box-shadow: var(--win31-bevel-pressed); }
+.win31-btn-control[data-btn="min"]::before,
+.win31-btn-control[data-btn="max"]::before {
+  content: ""; display: block; width: 0; height: 0;
+  border-left: 6px solid transparent; border-right: 6px solid transparent;
+}
+.win31-btn-control[data-btn="min"]::before { border-top: 6px solid var(--win31-text); }
+.win31-btn-control[data-btn="max"]::before { border-bottom: 6px solid var(--win31-text); }
+.win31-btn-control[data-btn="close"]::before,
+.win31-btn-control[data-btn="close"]::after {
+  content: ""; position: absolute; width: 12px; height: 2px; background: var(--win31-text);
+}
+.win31-btn-control[data-btn="close"]::before { transform: rotate(45deg); }
+.win31-btn-control[data-btn="close"]::after { transform: rotate(-45deg); }
+
+/* ---------- Menu bar ---------- */
+.win31-menubar {
+  display: flex; align-items: stretch; flex-wrap: nowrap;
+  height: var(--win31-menubar-height);
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border); border-top: none;
+  padding: 0 4px; margin: 0;
+  font-family: var(--win31-font-ui); font-size: 16px; font-weight: 700;
+  user-select: none;
+}
+.win31-menu { position: relative; display: flex; align-items: stretch; }
+.win31-menu-label {
+  display: flex; align-items: center; padding: 0 8px; cursor: default;
+  white-space: nowrap; color: var(--win31-text);
+}
+.win31-menu-label u, .win31-menu-item u, .win31-menubar-link u { text-decoration: underline; text-underline-offset: 1px; }
+.win31-menu.is-open > .win31-menu-label { background: var(--win31-titlebar-active-bg); color: var(--win31-titlebar-text); }
+.win31-menu-dropdown {
+  display: none; position: fixed; z-index: 1000; min-width: 190px;
+  background: var(--win31-window-bg); border: 1px solid var(--win31-border);
+  box-shadow: 2px 2px 0 var(--win31-button-dark);
+  padding: 4px 0; flex-direction: column;
+}
+.win31-menu.is-open > .win31-menu-dropdown { display: flex; }
+.win31-menu-item {
+  display: block; width: 100%; text-align: left;
+  padding: 7px 24px 7px 16px; border: none; background: transparent;
+  color: var(--win31-text); cursor: default; white-space: nowrap;
+  font-family: var(--win31-font-ui); font-size: 16px; font-weight: 700;
+  box-sizing: border-box;
+}
+.win31-menu-item:hover, .win31-menu-item:focus, .win31-menu-item.is-hover {
+  background: var(--win31-titlebar-active-bg); color: var(--win31-titlebar-text); outline: none;
+}
+.win31-menu-item:disabled { color: var(--win31-button-dark); }
+.win31-menu-item .accel { float: right; margin-left: 24px; font-weight: 400; }
+.win31-menu-separator { border: none; border-top: 1px solid var(--win31-button-dark); border-bottom: 1px solid var(--win31-button-light); margin: 3px 4px; }
+.win31-menubar-link {
+  display: flex; align-items: center; padding: 0 8px; cursor: default;
+  color: var(--win31-text); text-decoration: none; white-space: nowrap;
+}
+.win31-menubar-link:hover { background: var(--win31-titlebar-active-bg); color: var(--win31-titlebar-text); }
+
+/* ---------- Window body ---------- */
+.win31-window-body {
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border); border-top: none;
+  padding: 8px 12px; color: var(--win31-text);
+}
+.win31-window-body.is-flush { padding: 0; }
+.win31-sunken {
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-sunken);
+}
+.win31-groupbox {
+  border: 1px solid var(--win31-button-dark); border-top-color: var(--win31-button-dark);
+  margin: 8px 0; padding: 10px 12px 12px; position: relative;
+  box-shadow: inset 1px 1px 0 var(--win31-button-light), inset -1px -1px 0 var(--win31-button-light);
+}
+.win31-groupbox > legend { padding: 0 4px; font-family: var(--win31-font-ui); font-size: 16px; }
+
+/* ---------- Toolbar ---------- */
+.win31-toolbar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 4px;
+  padding: 5px 8px; min-height: 34px;
+  background: var(--win31-frame);
+  border-bottom: 1px solid var(--win31-border);
+}
+.win31-toolbar .win31-drives {
+  width: 92px; height: 16px;
+  background: url("assets/img/drives.png") left center / contain no-repeat;
+  image-rendering: pixelated; flex: 0 0 auto;
+}
+.win31-toolbar .win31-path {
+  margin-left: auto; white-space: nowrap; font-family: var(--win31-font-ui);
+  font-size: 16px; font-weight: 700;
+}
+.win31-toolbar-sep { width: 1px; align-self: stretch; margin: 2px 3px; border-left: 1px solid var(--win31-button-dark); border-right: 1px solid var(--win31-button-light); }
+
+/* ---------- Buttons ---------- */
+.win31-button {
+  min-width: 75px; height: var(--win31-control-height);
+  padding: 0 10px; border: 1px solid var(--win31-border);
+  background: var(--win31-button-face); color: var(--win31-text);
+  font-family: var(--win31-font-ui); font-size: 16px; font-weight: 400;
+  box-shadow: var(--win31-bevel-raised);
+  cursor: default; user-select: none; outline: none;
+}
+.win31-button:active, .win31-button.is-pressed { box-shadow: var(--win31-bevel-pressed); padding-top: 2px; }
+.win31-button:focus-visible { outline: 1px dotted var(--win31-border); outline-offset: -4px; }
+.win31-button:disabled { color: var(--win31-button-dark); text-shadow: 1px 1px 0 var(--win31-button-light); }
+.win31-button.is-small { min-width: 0; height: 26px; padding: 0 8px; font-size: 14px; }
+.win31-button.is-default { outline: 1px solid var(--win31-border); outline-offset: 1px; }
+
+/* ---------- Inputs ---------- */
+.win31-input, .win31-select, .win31-textarea {
+  height: var(--win31-input-height); padding: 0 5px;
+  background: var(--win31-window-bg); color: var(--win31-text);
+  border: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-sunken);
+  font-family: var(--win31-font-ui); font-size: 16px; outline: none;
+  border-radius: 0;
+}
+.win31-textarea { height: auto; min-height: 72px; padding: 4px 5px; resize: none; }
+.win31-input:focus, .win31-select:focus, .win31-textarea:focus { outline: none; }
+.win31-input:disabled, .win31-select:disabled { background: var(--win31-button-face); color: var(--win31-button-dark); }
+.win31-select { padding-right: 22px; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--win31-text) 50%), linear-gradient(135deg, var(--win31-text) 50%, transparent 50%);
+  background-position: calc(100% - 11px) 11px, calc(100% - 7px) 11px;
+  background-size: 4px 4px, 4px 4px; background-repeat: no-repeat;
+}
+.win31-label { font-family: var(--win31-font-ui); font-size: 16px; }
+.win31-field { display: flex; align-items: center; gap: 8px; margin: 7px 0; }
+
+/* ---------- Checkbox / radio ---------- */
+.win31-check, .win31-radio {
+  appearance: none; width: 16px; height: 16px; margin: 0 5px 0 0;
+  background: var(--win31-window-bg); border: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-sunken); position: relative; top: 2px;
+}
+.win31-radio { border-radius: 50%; }
+.win31-check:checked::after {
+  content: ""; position: absolute; left: 2px; top: 1px; width: 10px; height: 7px;
+  border-left: 2px solid var(--win31-text); border-bottom: 2px solid var(--win31-text);
+  transform: rotate(-45deg);
+}
+.win31-radio:checked::after {
+  content: ""; position: absolute; left: 4px; top: 4px; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--win31-text);
+}
+.win31-check-label, .win31-radio-label { display: inline-flex; align-items: center; font-family: var(--win31-font-ui); font-size: 16px; cursor: default; }
+
+/* ---------- Lists / tree ---------- */
+.win31-list { background: var(--win31-window-bg); overflow: auto; outline: none; }
+.win31-list-header {
+  display: grid; align-items: center; gap: 10px; padding: 3px 8px;
+  background: var(--win31-frame); border-bottom: 1px solid var(--win31-border);
+  font-family: var(--win31-font-ui); font-size: 14px; font-weight: 700; white-space: nowrap;
+  position: sticky; top: 0; z-index: 2;
+}
+.win31-list-row {
+  display: grid; align-items: center; gap: 10px; padding: 3px 8px;
+  font-family: var(--win31-font-ui); font-size: 16px; color: var(--win31-text);
+  cursor: default; white-space: nowrap; user-select: none;
+}
+.win31-list-row:hover { background: var(--win31-selection-bg); color: var(--win31-selection-text); }
+.win31-list-row.is-current { background: var(--win31-selection-bg); color: var(--win31-selection-text); }
+.win31-list-row.is-group { font-weight: 700; }
+.win31-list-row .indent { display: inline-block; width: 20px; }
+.win31-list-row .icon {
+  display: inline-block; width: 21px; height: 22px; margin-right: 6px; vertical-align: -5px;
+  background: url("assets/img/file.png") left top / 21px 22px no-repeat; image-rendering: pixelated;
+}
+.win31-tree { background: var(--win31-window-bg); overflow: auto; padding: 4px 0; }
+.win31-tree-row {
+  display: flex; align-items: center; gap: 4px; padding: 2px 6px;
+  font-family: var(--win31-font-ui); font-size: 16px; white-space: nowrap; cursor: default;
+}
+.win31-tree-row:hover { background: var(--win31-selection-bg); color: var(--win31-selection-text); }
+.win31-tree-row.is-current { background: var(--win31-selection-bg); color: var(--win31-selection-text); }
+.win31-tree-caret { width: 14px; color: inherit; text-align: center; font-size: 12px; }
+.win31-tree-icon { width: 16px; height: 16px; background: #c0c0c0; border: 1px solid #000; box-shadow: var(--win31-bevel-sunken); flex: 0 0 16px; }
+.win31-tree-row.is-current .win31-tree-icon { background: #fff; }
+
+/* ---------- Status bar ---------- */
+.win31-statusbar { display: flex; gap: 2px; padding: 2px; background: var(--win31-frame); border-top: 1px solid var(--win31-border); }
+.win31-status-pane {
+  flex: 1 1 0; min-width: 0; padding: 2px 6px; background: var(--win31-frame);
+  border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken);
+  font-family: var(--win31-font-ui); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ---------- Split layout ---------- */
+.win31-split { display: grid; grid-template-columns: 250px minmax(0,1fr); gap: 6px; padding: 6px; background: var(--win31-frame); }
+.win31-pane { display: flex; flex-direction: column; min-height: 0; background: var(--win31-window-bg); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken); }
+.win31-pane-title { padding: 2px 6px; background: var(--win31-frame); border-bottom: 1px solid var(--win31-border); font-family: var(--win31-font-ui); font-size: 14px; font-weight: 700; }
+
+/* ---------- Dialog ---------- */
+.win31-window.is-dialog .win31-window-body { padding: 12px 16px; background: var(--win31-frame); }
+.win31-dialog-buttons { display: flex; justify-content: center; gap: 8px; padding: 10px 12px 12px; background: var(--win31-frame); border: 1px solid var(--win31-border); border-top: none; }
+.win31-dialog-backdrop { position: fixed; inset: 0; background: transparent; z-index: 450; }
+
+/* ---------- Desktop icon (minimized) ---------- */
+.win31-desktop-icon {
+  position: fixed; top: 10px; left: 10px; width: 84px; z-index: 90;
+  display: none; flex-direction: column; align-items: center; cursor: default; user-select: none;
+}
+body.is-minimized .win31-desktop-icon { display: flex; }
+.win31-desktop-icon img { width: 48px; height: 48px; border: none; }
+.win31-desktop-icon span {
+  margin-top: 4px; padding: 1px 3px; background: var(--win31-titlebar-active-bg); color: var(--win31-titlebar-text);
+  font-family: var(--win31-font-ui); font-size: 14px; text-align: center; line-height: 1.3; word-break: break-all;
+}
+body.is-minimized .win31-app-window { display: none; }
+
+/* ---------- Tabs (Win31 style) ---------- */
+.win31-tabs { display: flex; gap: 2px; padding: 0 4px; margin-bottom: -1px; }
+.win31-tab {
+  padding: 3px 12px; background: var(--win31-button-face); border: 1px solid var(--win31-border);
+  border-bottom: none; font-family: var(--win31-font-ui); font-size: 15px; cursor: default;
+}
+.win31-tab.is-active { background: var(--win31-window-bg); position: relative; top: 1px; }
+
+/* ---------- Scrollbars (WebKit) ---------- */
+::-webkit-scrollbar { width: 16px; height: 16px; background: var(--win31-button-face); }
+::-webkit-scrollbar-track {
+  background-color: var(--win31-button-face);
+  background-image: repeating-conic-gradient(var(--win31-button-face) 0 25%, var(--win31-button-light) 0 50%);
+  background-size: 2px 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--win31-button-face); border: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-raised);
+  min-height: 20px;
+}
+::-webkit-scrollbar-thumb:active { box-shadow: var(--win31-bevel-pressed); }
+::-webkit-scrollbar-corner { background: var(--win31-button-face); }
+::-webkit-scrollbar-button:single-button {
+  display: block; width: 16px; height: 16px; background-color: var(--win31-button-face);
+  border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-raised);
+  background-repeat: no-repeat; background-position: center;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M8 4 3 11h10z' fill='black'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M8 12 3 5h10z' fill='black'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M4 8 11 3v10z' fill='black'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M12 8 5 3v10z' fill='black'/></svg>");
+}
+* { scrollbar-color: var(--win31-button-face) var(--win31-button-face); scrollbar-width: auto; }
+
+
+/* ---------- Progress ---------- */
+.win31-progress { height: 20px; padding: 2px; background: var(--win31-window-bg); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken); }
+.win31-progress-bar { height: 100%; background: repeating-linear-gradient(90deg, var(--win31-titlebar-active) 0 8px, var(--win31-window-bg) 8px 10px); }
+.win31-progress-label { font-family: var(--win31-font-ui); font-size: 14px; margin-left: 8px; }
+
+/* ---------- Slider ---------- */
+.win31-slider { position: relative; width: 230px; height: 26px; background: var(--win31-button-face); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken); }
+.win31-slider-track { position: absolute; left: 10px; right: 10px; top: 50%; height: 4px; transform: translateY(-50%); background: var(--win31-button-dark); box-shadow: inset 1px 1px 0 var(--win31-border), inset -1px -1px 0 var(--win31-button-light); }
+.win31-slider-thumb { position: absolute; top: 3px; left: 92px; width: 12px; height: 18px; background: var(--win31-button-face); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-raised); }
+.win31-slider-ticks { position: absolute; left: 12px; right: 12px; bottom: 1px; height: 4px; background: repeating-linear-gradient(90deg, var(--win31-border) 0 1px, transparent 1px 12px); }
+
+/* ---------- Spin ---------- */
+.win31-spin { display: inline-flex; align-items: stretch; }
+.win31-spin .win31-input { width: 70px; }
+.win31-spin-buttons { display: flex; flex-direction: column; width: 20px; margin-left: -1px; }
+.win31-spin-btn { flex: 1; padding: 0; background: var(--win31-button-face); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-raised); position: relative; cursor: default; }
+.win31-spin-btn::before { content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; transform: translate(-50%,-50%); }
+.win31-spin-btn.up::before { border-bottom: 5px solid var(--win31-text); }
+.win31-spin-btn.down::before { border-top: 5px solid var(--win31-text); }
+.win31-spin-btn:active { box-shadow: var(--win31-bevel-pressed); }
+
+/* ---------- Combo / listbox ---------- */
+.win31-combo { display: inline-flex; width: 190px; }
+.win31-combo .win31-input { flex: 1; min-width: 0; }
+.win31-combo-btn { width: 24px; margin-left: -1px; background: var(--win31-button-face); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-raised); position: relative; cursor: default; }
+.win31-combo-btn::before { content: ""; position: absolute; left: 50%; top: 50%; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid var(--win31-text); transform: translate(-50%,-35%); }
+.win31-listbox { width: 190px; height: 112px; overflow: auto; background: var(--win31-window-bg); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken); }
+.win31-listbox-item { padding: 2px 6px; font-family: var(--win31-font-ui); font-size: 16px; cursor: default; white-space: nowrap; }
+.win31-listbox-item.is-selected { background: var(--win31-selection-bg); color: var(--win31-selection-text); }
+
+/* ---------- Table ---------- */
+.win31-table { width: 100%; border-collapse: collapse; font-family: var(--win31-font-ui); font-size: 15px; background: var(--win31-window-bg); }
+.win31-table th { background: var(--win31-frame); border: 1px solid var(--win31-button-dark); padding: 3px 7px; text-align: left; box-shadow: inset -1px -1px 0 var(--win31-button-dark), inset 1px 1px 0 var(--win31-button-light); }
+.win31-table td { border: 1px solid var(--win31-button-dark); padding: 3px 7px; }
+
+/* ---------- Tooltip ---------- */
+.win31-tooltip { display: inline-block; padding: 2px 6px; background: #fff9cc; border: 1px solid var(--win31-border); box-shadow: 2px 2px 0 var(--win31-button-dark); font-family: var(--win31-font-ui); font-size: 14px; }
+
+/* ---------- Static menu ---------- */
+.win31-menu-static { display: flex; flex-direction: column; min-width: 190px; background: var(--win31-window-bg); border: 1px solid var(--win31-border); box-shadow: 2px 2px 0 var(--win31-button-dark); padding: 4px 0; }
+.win31-menu-static .win31-menu-item { padding: 6px 20px 6px 16px; }
+.win31-menu-check::before { content: "✓  "; margin-left: -11px; }
+
+/* ---------- MessageBox icons ---------- */
+.win31-msg-icon { width: 32px; height: 32px; flex: 0 0 32px; image-rendering: pixelated; background-repeat: no-repeat; background-size: 32px 32px; }
+.win31-msg-icon.stop { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' shape-rendering='crispEdges'><rect width='32' height='32' fill='none'/><circle cx='16' cy='16' r='13' fill='%23c00000' stroke='black'/><path d='M10 10 L22 22 M22 10 L10 22' stroke='white' stroke-width='4'/></svg>"); }
+.win31-msg-icon.warn { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' shape-rendering='crispEdges'><path d='M16 3 30 28H2z' fill='%23ffd700' stroke='black'/><rect x='15' y='10' width='2' height='10' fill='black'/><rect x='15' y='23' width='2' height='2' fill='black'/></svg>"); }
+.win31-msg-icon.info { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' shape-rendering='crispEdges'><circle cx='16' cy='16' r='13' fill='%23000080' stroke='black'/><rect x='15' y='10' width='2' height='2' fill='white'/><rect x='15' y='14' width='2' height='9' fill='white'/></svg>"); }
+.win31-msgbox-row { display: flex; gap: 12px; align-items: flex-start; }
+
+/* ---------- Scroll demo ---------- */
+.win31-scroll-demo { width: 100%; height: 120px; overflow: auto; background: var(--win31-window-bg); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken); }
+.win31-scroll-inner { height: 360px; padding: 6px 10px; font-family: var(--win31-font-ui); font-size: 15px; }
+
+/* ---------- Toolbar inline ---------- */
+.win31-toolbar-inline { display: flex; align-items: center; gap: 4px; padding: 4px 6px; background: var(--win31-frame); border: 1px solid var(--win31-border); box-shadow: var(--win31-bevel-sunken); }
+
+/* ---------- Utility ---------- */
+.win31-mono { font-family: var(--win31-font-mono); font-size: 14px; }
+.win31-muted { color: var(--win31-button-dark); }
+.win31-right { text-align: right; }
+.win31-center { text-align: center; }
+.win31-hidden { display: none !important; }
+.win31-row-gap { height: 6px; }
+
+@media (max-width: 900px) {
+  .win31-split { grid-template-columns: 1fr; }
+  .win31-split .win31-pane:first-child { max-height: 180px; }
+}

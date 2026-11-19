@@ -1,0 +1,241 @@
+/* States used only by the React components. Base look lives in @win31ui/tokens. */
+
+.win31-titlebar.is-inactive {
+  background: var(--win31-titlebar-inactive-bg);
+  color: var(--win31-titlebar-inactive-text);
+}
+
+.win31-titlebar.is-inactive .win31-btn-control[data-btn='min']::before {
+  border-top-color: var(--win31-titlebar-inactive-text);
+}
+
+.win31-titlebar.is-inactive .win31-btn-control[data-btn='max']::before {
+  border-bottom-color: var(--win31-titlebar-inactive-text);
+}
+
+.win31-titlebar.is-inactive .win31-btn-control[data-btn='close']::before,
+.win31-titlebar.is-inactive .win31-btn-control[data-btn='close']::after {
+  background: var(--win31-titlebar-inactive-text);
+}
+
+.win31-titlebar.is-inactive .win31-sysmenu {
+  opacity: 0.65;
+}
+
+.win31-titlebar.is-manual-drag {
+  touch-action: none;
+}
+
+.win31-titlebar.is-electron-drag {
+  -webkit-app-region: drag;
+}
+
+.win31-titlebar.is-electron-drag .win31-btn-control,
+.win31-titlebar.is-electron-drag .win31-sysmenu {
+  -webkit-app-region: no-drag;
+}
+
+/* ---------- Dialog positioning (batch 4) ---------- */
+
+/* Native <dialog> backdrop: Win31 dialogs show no dimming. */
+dialog.win31-window.is-dialog::backdrop {
+  background: transparent;
+}
+
+.win31-window.is-dialog {
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+}
+
+/* ---------- Menus (batch 2) ---------- */
+
+button.win31-menu-label {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+.win31-menu.is-open > .win31-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.win31-menu-check::before {
+  content: '✓  ';
+  margin-left: -11px;
+}
+
+/* ---------- Tabs panel (batch 2) ---------- */
+
+.win31-tabpanel {
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border);
+  color: var(--win31-text);
+  padding: 8px 12px;
+}
+
+/* ---------- Desktop (batch 4) ---------- */
+
+.win31-desktop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* ---------- Data components (batch 3) ---------- */
+
+.win31-combo {
+  position: relative;
+}
+
+.win31-combo .win31-listbox {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 400;
+}
+
+.win31-table tr.is-selected {
+  background: var(--win31-selection-bg);
+  color: var(--win31-selection-text);
+}
+
+/* Sortable header button fills its cell; th supplies the bevel. */
+.win31-table th:has(> .win31-table-sort) {
+  padding: 0;
+}
+
+.win31-table-sort {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 24px;
+  padding: 3px 7px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.win31-table-sort:focus-visible {
+  outline: 1px dotted var(--win31-border);
+  outline-offset: -3px;
+}
+
+/* ---------- Tree caret & node icons ---------- */
+
+/* Windows 3.1 File Manager style: a small boxed [+] / [−] expander. */
+.win31-tree-caret {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--win31-border);
+  background: var(--win31-window-bg);
+  font-family: var(--win31-font-ui);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--win31-text);
+  padding: 0;
+}
+
+.win31-tree-caret:empty {
+  border-color: transparent;
+  background: transparent;
+}
+
+.win31-tree-icon.has-image {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.win31-tree-icon img,
+.win31-tree-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  image-rendering: pixelated;
+}
+
+/* ---------- Calendar ---------- */
+
+.win31-calendar {
+  width: 210px;
+  padding: 6px;
+  background: var(--win31-window-bg);
+  border: 1px solid var(--win31-border);
+  box-shadow: var(--win31-bevel-sunken);
+  font-family: var(--win31-font-ui);
+  font-size: 14px;
+  user-select: none;
+}
+
+.win31-calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.win31-calendar-header .win31-button {
+  min-width: 26px;
+  padding: 0;
+}
+
+.win31-calendar-month {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.win31-calendar-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+}
+
+.win31-calendar-weekday {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 0;
+}
+
+.win31-calendar-day {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--win31-text);
+  font: inherit;
+  padding: 1px 0;
+  text-align: center;
+  cursor: default;
+}
+
+.win31-calendar-day.is-empty {
+  border-color: transparent;
+}
+
+.win31-calendar-day.is-today {
+  border-color: var(--win31-border);
+}
+
+.win31-calendar-day.is-selected {
+  background: var(--win31-selection-bg);
+  color: var(--win31-selection-text);
+}
+
+.win31-window.is-dragging {
+  opacity: 0.98;
+}
