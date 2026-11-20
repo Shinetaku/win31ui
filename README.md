@@ -22,26 +22,26 @@ menus, dialogs and six switchable colour schemes — all in ~1,900 lines of Reac
 
 ## Watch it move
 
-| Windows & drag | File Manager |
-|---|---|
+| Windows & drag                                            | File Manager                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- |
 | ![window management](./docs/screenshots/demo-windows.gif) | ![file manager](./docs/screenshots/demo-file-manager.gif) |
 
-| Calculator | Colour schemes (six themes) |
-|---|---|
+| Calculator                                            | Colour schemes (six themes)                   |
+| ----------------------------------------------------- | --------------------------------------------- |
 | ![calculator](./docs/screenshots/demo-calculator.gif) | ![themes](./docs/screenshots/demo-themes.gif) |
 
-| Minesweeper |
-|---|
+| Minesweeper                                             |
+| ------------------------------------------------------- |
 | ![minesweeper](./docs/screenshots/demo-minesweeper.gif) |
 
 ## Screens
 
-| | |
-|---|---|
-| ![File Manager](./docs/screenshots/file-manager.png) | ![Write](./docs/screenshots/write.png) |
-| ![Paintbrush](./docs/screenshots/paintbrush.png) | ![Control Panel](./docs/screenshots/control-panel.png) |
-| ![Calculator](./docs/screenshots/calculator.png) | ![Minesweeper](./docs/screenshots/minesweeper.png) |
-| ![Solitaire](./docs/screenshots/solitaire.png) | ![Components](./docs/screenshots/components.png) |
+|                                                      |                                                        |
+| ---------------------------------------------------- | ------------------------------------------------------ |
+| ![File Manager](./docs/screenshots/file-manager.png) | ![Write](./docs/screenshots/write.png)                 |
+| ![Paintbrush](./docs/screenshots/paintbrush.png)     | ![Control Panel](./docs/screenshots/control-panel.png) |
+| ![Calculator](./docs/screenshots/calculator.png)     | ![Minesweeper](./docs/screenshots/minesweeper.png)     |
+| ![Solitaire](./docs/screenshots/solitaire.png)       | ![Components](./docs/screenshots/components.png)       |
 
 ## Highlights
 
@@ -83,17 +83,17 @@ Bitmap assets are available under `@win31ui/react/assets/*`.
 
 ## Components
 
-| Group | Components |
-|---|---|
-| Theme | `Win31Provider`, `useWin31Theme`, `applyWin31Theme` — `data-win31-theme` on `<html>` |
-| Window | `Win31Window` (dialog/maximized states), `Win31TitleBar` (system menu, min/max/close, four `dragMode`s) |
-| Menus | `Win31MenuBar` (single tab stop, arrow navigation, hover switching), `Win31Menu`, `Win31MenuItem`, `Win31MenuLink`, `Win31MenuSeparator` |
-| Navigation | `Win31Tabs` (ARIA tablist), `Win31GroupBox` |
-| Controls | `Win31Button`, `Win31Input`, `Win31Textarea`, `Win31Field`, `Win31Checkbox`, `Win31Radio`, `Win31NumberField`, `Win31Slider`, `Win31ProgressBar`, `Win31ComboBox`, `Win31ListBox` |
-| Data | `Win31Table<T>` (TanStack: sortable header buttons, row selection), `Win31Tree` (boxed ± carets, custom icons), `Win31List` (detail list with group/indent rows), `Win31Calendar` |
-| Feedback | `Win31Dialog` (native `<dialog>`), `Win31MessageBox`, `Win31Tooltip` |
-| Bars | `Win31Toolbar`, `Win31ToolbarSeparator`, `Win31StatusBar`, `Win31StatusPane` |
-| Desktop | `Win31Desktop`, `Win31DesktopIcon` |
+| Group      | Components                                                                                                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Theme      | `Win31Provider`, `useWin31Theme`, `applyWin31Theme` — `data-win31-theme` on `<html>`                                                                                              |
+| Window     | `Win31Window` (dialog/maximized states), `Win31TitleBar` (system menu, min/max/close, four `dragMode`s)                                                                           |
+| Menus      | `Win31MenuBar` (single tab stop, arrow navigation, hover switching), `Win31Menu`, `Win31MenuItem`, `Win31MenuLink`, `Win31MenuSeparator`                                          |
+| Navigation | `Win31Tabs` (ARIA tablist), `Win31GroupBox`                                                                                                                                       |
+| Controls   | `Win31Button`, `Win31Input`, `Win31Textarea`, `Win31Field`, `Win31Checkbox`, `Win31Radio`, `Win31NumberField`, `Win31Slider`, `Win31ProgressBar`, `Win31ComboBox`, `Win31ListBox` |
+| Data       | `Win31Table<T>` (TanStack: sortable header buttons, row selection), `Win31Tree` (boxed ± carets, custom icons), `Win31List` (detail list with group/indent rows), `Win31Calendar` |
+| Feedback   | `Win31Dialog` (native `<dialog>`), `Win31MessageBox`, `Win31Tooltip`                                                                                                              |
+| Bars       | `Win31Toolbar`, `Win31ToolbarSeparator`, `Win31StatusBar`, `Win31StatusPane`                                                                                                      |
+| Desktop    | `Win31Desktop`, `Win31DesktopIcon`                                                                                                                                                |
 
 Every props type is exported; hover any component in your editor for JSDoc.
 

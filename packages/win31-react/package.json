@@ -1,6 +1,6 @@
 {
   "name": "@win31ui/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Windows 3.1 React components with bundled design tokens, pixel fonts and bitmaps. SSR-safe, ready for Next.js, Vite, Electron and Tauri.",
   "license": "MIT",
   "type": "module",
@@ -68,5 +68,14 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shinetaku/win31ui.git",
+    "directory": "packages/win31-react"
+  },
+  "homepage": "https://shinetaku.github.io/win31ui/",
+  "bugs": {
+    "url": "https://github.com/Shinetaku/win31ui/issues"
   }
 }

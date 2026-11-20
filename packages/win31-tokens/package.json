@@ -29,5 +29,14 @@
     "build": "echo \"@win31ui/tokens is static; nothing to build\"",
     "typecheck": "echo \"@win31ui/tokens has no TypeScript\""
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shinetaku/win31ui.git",
+    "directory": "packages/win31-tokens"
+  },
+  "homepage": "https://shinetaku.github.io/win31ui/",
+  "bugs": {
+    "url": "https://github.com/Shinetaku/win31ui/issues"
+  }
 }
